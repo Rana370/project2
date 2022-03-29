@@ -24,13 +24,13 @@ public class Movie {
     }
 
     public void calculateProfit(double moneyEarned) {
-        this.profit =  (this.overallBudget - this.moneySpent) + moneyEarned;
+        this.profit = (this.overallBudget - this.moneySpent) + moneyEarned;
+        director.royaltyBasedProfit(); // calling calculate royalty here only after the profit has been calculated
     }
 
     public void updateMoneyEarned(double moneyEarned) {
         this.moneyEarned += moneyEarned;
         calculateProfit(this.moneyEarned);
-        director.royaltyBasedProfit();
     }
 
     public void payDay() {
